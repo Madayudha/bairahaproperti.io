@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Graha Jennati Properti </title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Figtree:wght@400;500;600&display=swap"><style id="css">
+:root{--bg:#f1f5f2;--surf:#fff;--ink:#12302b;--mut:#4f6862;--line:#d3ded9;--brand:#14473f;--brand-ink:#fff;--gold:#e0a526;--ok:#3f9b6f;--bk:#e0a526;--sold:#b9c4c0;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1d1a;--surf:#142925;--ink:#e8f1ee;--mut:#9db5ae;--line:#264039;--brand:#7fd0b8;--brand-ink:#0d1d1a;--sold:#3a4d48;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0d1d1a;--surf:#142925;--ink:#e8f1ee;--mut:#9db5ae;--line:#264039;--brand:#7fd0b8;--brand-ink:#0d1d1a;--sold:#3a4d48;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 Figtree,system-ui,sans-serif}
+h1,h2,h3{font-family:'Bricolage Grotesque',Figtree,sans-serif;line-height:1.1;margin:0 0 .5em;letter-spacing:-.02em}
+h2{font-size:clamp(1.7rem,4vw,2.5rem)}
+section{padding:72px 20px}
+.w{max-width:1080px;margin:0 auto}
+p{max-width:62ch}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+nav .w{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;gap:16px}
+nav b{font-family:'Bricolage Grotesque',sans-serif;font-size:1.15rem}
+nav a{color:var(--ink);text-decoration:none;font-weight:500;margin-left:18px;font-size:.95rem}
+nav a.btn{color:var(--brand-ink)}
+.btn{display:inline-block;background:var(--brand);color:var(--brand-ink);padding:13px 24px;border-radius:999px;font-weight:600;text-decoration:none;border:0;cursor:pointer;font:600 1rem Figtree,sans-serif}
+.btn.g{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.hero{background:var(--brand);color:#fff;padding:0;overflow:hidden}
+.hero .w{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center;padding:72px 20px 0}
+.hero h1{font-size:clamp(2.4rem,6vw,4.4rem);font-weight:800}
+.hero p{color:#d6e8e2;font-size:1.1rem}
+.hero .btn{background:var(--gold);color:#1b1500}
+.hero .btn.g{background:transparent;color:#fff;border:1.5px solid #fff}
+.hero-art{align-self:end}
+.stats{display:flex;gap:28px;flex-wrap:wrap;margin:28px 0 0;padding-bottom:56px}
+.stats div{font-size:.9rem;color:#cfe3dc}.stats b{display:block;font:700 1.5rem 'Bricolage Grotesque',sans-serif;color:#fff}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.card{background:var(--surf);border:1px solid var(--line);border-radius:14px;padding:22px}
+.card h3{font-size:1.15rem}.card p{margin:0;color:var(--mut);font-size:.95rem}
+.tabs{display:flex;gap:8px;margin:18px 0;flex-wrap:wrap}
+.tabs button{border:1.5px solid var(--line);background:var(--surf);color:var(--ink);padding:10px 18px;border-radius:999px;font:600 .95rem Figtree,sans-serif;cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--brand);color:var(--brand-ink);border-color:var(--brand)}
+.unit{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
+.unit ul{padding-left:18px;color:var(--mut)}
+.price{font:800 2rem 'Bricolage Grotesque',sans-serif}
+.sp{display:grid;grid-template-columns:1fr 280px;gap:20px;align-items:start}
+.map{background:var(--surf);border:1px solid var(--line);border-radius:14px;padding:8px;overflow-x:auto}
+.map svg{display:block;min-width:620px;width:100%;height:auto;touch-action:manipulation}
+.k{cursor:pointer;stroke:var(--surf);stroke-width:2;vector-effect:non-scaling-stroke}.hd{fill:#fff;stroke:#e0a526;stroke-width:2;cursor:move;vector-effect:non-scaling-stroke}
+.ov .k{fill-opacity:.55;stroke:#fff}.map text.id{stroke:rgba(0,0,0,.55);stroke-width:3px;paint-order:stroke}
+.k.ok{fill:var(--ok)}.k.bk{fill:var(--bk)}.k.sd{fill:var(--sold);cursor:not-allowed}
+.k.on{stroke:var(--ink);stroke-width:3}
+.map text{font:600 11px Figtree,sans-serif;fill:#fff;pointer-events:none;text-anchor:middle}
+.map .lb{fill:var(--mut);font-weight:500;font-size:12px}
+.leg{display:flex;gap:16px;flex-wrap:wrap;margin:12px 0;font-size:.9rem;color:var(--mut)}
+.leg i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.panel{position:sticky;top:80px}
+.panel dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:14px 0}.panel dt{color:var(--mut)}.panel dd{margin:0;font-weight:600;text-align:right}
+.calc label{display:block;font-weight:600;margin:14px 0 4px}.calc output{float:right;font-weight:600}
+.calc input[type=range]{width:100%;accent-color:var(--brand)}
+.res{background:var(--brand);color:var(--brand-ink);border-radius:14px;padding:24px}
+.res b{display:block;font:800 2.2rem 'Bricolage Grotesque',sans-serif}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+form label{display:block;font-weight:600;margin:12px 0 4px}
+input[type=text],input[type=tel],input[type=number],select,textarea{width:100%;padding:10px 12px;border:1.5px solid var(--line);border-radius:10px;background:var(--surf);color:var(--ink);font:inherit}
+.loc li{margin:6px 0}
+details{border-bottom:1px solid var(--line);padding:14px 0}summary{font-weight:600;cursor:pointer}details p{color:var(--mut);margin:8px 0 0}
+.gal{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}.gal figure{margin:0}.gal img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:12px;display:block}.gal figcaption{font-size:.9rem;color:var(--mut);margin-top:6px}
+.q p{color:var(--ink);font-size:1.02rem;margin:0 0 12px}.q small{color:var(--mut)}
+footer{background:var(--brand);color:var(--brand-ink);padding:32px 20px;font-size:.9rem}
+#ab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;box-shadow:0 4px 16px rgba(0,0,0,.25)}
+.dr{position:fixed;top:env(safe-area-inset-top,0px);right:0;bottom:0;width:min(440px,100%);background:var(--surf);color:var(--ink);border-left:1px solid var(--line);z-index:50;overflow:auto;padding:0 16px 24px;font-size:.92rem}
+.dr.min{top:auto;bottom:0;height:auto;max-height:60px;overflow:hidden;width:min(440px,100%)}
+.dr header{position:sticky;top:0;background:var(--surf);padding:12px 0;display:flex;gap:8px;align-items:center;border-bottom:1px solid var(--line);z-index:2}
+.dr header b{flex:1}
+.dr label{display:block;font-weight:600;margin:10px 0 3px}
+.dr .tabs{margin:12px 0}.dr .tabs button{padding:6px 12px;font-size:.85rem}
+.dr .row{border:1px solid var(--line);border-radius:12px;padding:10px;margin:10px 0}
+.kr{display:grid;grid-template-columns:60px 1fr 1fr 32px 32px;gap:6px;margin:6px 0}
+.mini{border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:8px;padding:6px 10px;cursor:pointer;font:600 .85rem Figtree,sans-serif}
+.dr .btn{padding:8px 16px;font-size:.9rem}
+.dr img.th{width:100%;max-height:120px;object-fit:cover;border-radius:8px;margin:6px 0}
+@media(max-width:820px){.hero .w,.unit,.sp,.two{grid-template-columns:1fr}.panel{position:static}nav a.h{display:none}section{padding:52px 20px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style></head><body><div id="app"></div><div id="adm"></div><script id="cfg" type="application/json">{"name":"Graha Jennati Properti ","tag":"Perumahan Subsidi & Tanah Kavling","sub":"","addr":"Jl. Menyapa No. 1, Tenggarong, Kalimantan Timur","maps":"","wa":"6282299018386","akses":[],"tipe":[{"n":"Tipe 36","lt":72,"lb":36,"p":395,"sp":"2 kamar tidur, 1 kamar mandi, carport","img":"/_blob/d8bcf7136744da6630b9add207b56d61"},{"n":"Tipe 60","lt":105,"lb":60,"p":725,"sp":"3 kamar tidur, 2 kamar mandi, garasi, dapur terpisah","img":"/_blob/0017ec2325b6b0bb20da984b229d2d01"}],"gal":[{"url":"/_blob/fc686bef489db644954356901f8bb813","cap":"Perumahan Ikip mekar sari dengan tipe rumah 60 "},{"url":"/_blob/3b991796f8e61551b2af86b9fb2193ee","cap":"Perumahan Mangkurawang dengan tipe rumah 36"}],"testi":[{"t":"","by":""}],"sites":[{"name":"Ikip mekarsari","img":"/_blob/059f1bd7a48fb696c6818f585a8eafab","iw":1024,"ih":709,"kav":[{"id":"A1","tipe":0,"st":"bk","pts":[[513,162],[543,164],[541,185],[510,181],[511,161]]},{"id":"A2","tipe":0,"st":"ok","pts":[[508,181],[540,185],[536,202],[506,199]]},{"id":"A3","tipe":0,"st":"sd","pts":[[506,200],[536,205],[536,222],[504,217]]}]},{"name":"Mangkurawang","img":"/_blob/0b8cb2cadd08236a9f63759d81a24add","iw":534,"ih":837,"kav":[{"id":"A1","tipe":0,"st":"sd","pts":[[84,110],[130,110],[130,190],[84,190]]},{"id":"A2","tipe":0,"st":"bk","pts":[[131,110],[177,110],[177,193],[131,193]]},{"id":"A3","tipe":0,"st":"ok","pts":[[178,110],[226,110],[226,193],[178,193]]}]}]}</script><script id="main">
+const $=i=>document.getElementById(i);
+const rp=n=>"Rp "+Math.round(n).toLocaleString("id-ID");
+const esc=s=>String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fm=x=>String(x).replace(".",",");
+function genKav(){const o=[];[["A",36,0],["B",156,1],["C",276,2]].forEach(([b,y,r])=>{for(let i=0;i<10;i++){const x=16+i*62;o.push({id:b+(i+1),tipe:r,st:((i*7+r*5)%10<5)?"sd":((i*3+r)%4==0?"bk":"ok"),pts:[[x,y],[x+58,y],[x+58,y+68],[x,y+68]]})}});return o}
+function def(){return{name:"Griya Tepian Residence",tag:"Rumah nyaman untuk keluarga di Bontang",sub:"Hunian 1 lantai dengan lahan lega, cluster tertutup 24 jam, dan DP ringan. Dekat pusat kota.",addr:"Jl. Contoh Raya No. 1, Bontang, Kalimantan Timur",maps:"",wa:"6281200000000",
+akses:["Pusat kota Bontang: 15 menit","Sekolah dan kampus: 5 menit","Pasar dan minimarket: 5 menit","Rumah sakit: 12 menit","Kawasan industri: 10 menit"],
+tipe:[{n:"Tipe 36",lt:72,lb:36,p:395,sp:"2 kamar tidur, 1 kamar mandi, carport",img:""},{n:"Tipe 45",lt:84,lb:45,p:520,sp:"2 kamar tidur, 2 kamar mandi, carport, taman depan",img:""},{n:"Tipe 60",lt:105,lb:60,p:725,sp:"3 kamar tidur, 2 kamar mandi, garasi, dapur terpisah",img:""}],
+gal:[],testi:[],sites:[{name:"Lokasi 1",img:"",iw:800,ih:440,kav:genKav()}]}}
+let CFG=Object.assign(def(),JSON.parse($("cfg").textContent||"{}"));
+if(CFG.sp){CFG.sites=[{name:"Lokasi 1",img:CFG.sp.img||"",iw:800,ih:440,kav:CFG.sp.kav.map(k=>({id:k.id,tipe:k.tipe,st:k.st,pts:[[k.x-k.w/2,k.y-k.h/2],[k.x+k.w/2,k.y-k.h/2],[k.x+k.w/2,k.y+k.h/2],[k.x-k.w/2,k.y+k.h/2]]}))}];delete CFG.sp}
+let ti=0,SEL=null,PLACE="",ADM=false,MIN=false,AT="umum",moved=false,SI=0,TOOL="",DRW=[],PRE="A";
+const PL=[{w:6,h:6,r:[[0,0,3,3,"Kamar 1"],[3,0,3,3,"Kamar 2"],[0,3,3.5,3,"Ruang tamu"],[3.5,3,2.5,1.8,"Dapur"],[3.5,4.8,2.5,1.2,"KM"]]},
+{w:7.5,h:6,r:[[0,0,3.5,3,"Kamar utama"],[3.5,0,2.5,3,"Kamar 2"],[6,0,1.5,3,"KM 1"],[0,3,4,3,"Ruang tamu"],[4,3,2.5,3,"Dapur"],[6.5,3,1,3,"KM 2"]]},
+{w:9,h:7,r:[[0,0,3.5,3.5,"Kamar utama"],[3.5,0,2.75,3.5,"Kamar 2"],[6.25,0,2.75,3.5,"Kamar 3"],[0,3.5,4,3.5,"Ruang tamu"],[4,3.5,2.5,3.5,"Dapur"],[6.5,3.5,2.5,1.75,"KM"],[6.5,5.25,2.5,1.75,"Laundry"]]}];
+const NM={sd:"Terjual",bk:"Booking",ok:"Tersedia"};
+
+function render(){const C=CFG,T=C.tipe;document.title=C.name;
+const mp=C.maps||"https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(C.addr);
+const ps=T.map(t=>t.p),pmin=Math.max(50,Math.floor(Math.min(...ps)*.8/5)*5),pmax=Math.ceil(Math.max(...ps)*1.3/5)*5;
+$("app").innerHTML=`
+<nav><div class="w"><b>${esc(C.name)}</b><div><a class="h" href="#tipe">Tipe Rumah</a><a class="h" href="#siteplan">Site Plan</a><a class="h" href="#kpr">Simulasi KPR</a><a class="btn" href="#kontak" style="padding:8px 18px">Hubungi Kami</a></div></div></nav>
+<header class="hero"><div class="w"><div><h1>${esc(C.tag)}</h1><p>${esc(C.sub)}</p>
+<p><a class="btn" href="#siteplan">Pilih kavling</a> <a class="btn g" href="#kpr">Hitung cicilan</a></p>
+<div class="stats"><div><b>${C.sites.reduce((a,s)=>a+s.kav.length,0)} unit</b>kavling di denah</div><div><b>SHM</b>legalitas jelas</div><div><b>DP ringan</b>bisa dicicil</div></div></div>
+<svg class="hero-art" viewBox="0 0 400 280" role="img" aria-label="Ilustrasi rumah"><rect y="236" width="400" height="44" fill="#0f372f"/><polygon points="70,130 200,50 330,130" fill="#e0a526"/><rect x="90" y="130" width="220" height="106" fill="#f4efe2"/><rect x="120" y="160" width="50" height="76" fill="#14473f"/><rect x="205" y="156" width="80" height="48" fill="#9ccfc4"/><rect x="40" y="170" width="30" height="66" rx="15" fill="#3f9b6f"/><rect x="335" y="180" width="26" height="56" rx="13" fill="#3f9b6f"/></svg></div></header>
+<section><div class="w"><h2>Kenapa memilih ${esc(C.name)}</h2><div class="grid">
+<div class="card"><h3>Lokasi strategis</h3><p>Dekat sekolah, pasar, rumah sakit, dan akses jalan utama.</p></div>
+<div class="card"><h3>Cluster aman</h3><p>One gate system, satpam 24 jam, dan CCTV di sudut jalan.</p></div>
+<div class="card"><h3>Bebas banjir</h3><p>Kontur tanah ditinggikan dengan drainase beton.</p></div>
+<div class="card"><h3>Siap huni</h3><p>Listrik, air bersih, dan jalan paving tersedia saat serah terima.</p></div></div></div></section>
+${C.gal.length?`<section style="background:var(--surf)"><div class="w"><h2>Galeri</h2><div class="gal">${C.gal.map(g=>`<figure><img src="${esc(g.url)}" alt="${esc(g.cap||"Foto proyek")}" loading="lazy"><figcaption>${esc(g.cap)}</figcaption></figure>`).join("")}</div></div></section>`:""}
+<section id="tipe"><div class="w"><h2>Tipe rumah</h2><div class="tabs" role="tablist" id="tabs"></div><div class="unit" id="unit"></div></div></section>
+<section id="siteplan" style="background:var(--surf)"><div class="w"><h2>Site plan interaktif</h2><p>Klik kavling untuk melihat luas, harga, dan status.</p>
+<div class="leg"><span><i style="background:var(--ok)"></i>Tersedia</span><span><i style="background:var(--bk)"></i>Booking</span><span><i style="background:var(--sold)"></i>Terjual</span></div>
+<div class="tabs" id="stabs"></div><div class="sp"><div class="map"><svg id="svg" viewBox="0 0 800 440" role="group" aria-label="Denah kavling"></svg></div>
+<aside class="card panel" id="panel" aria-live="polite"><h3>Pilih kavling</h3><p>Klik salah satu kavling di denah untuk melihat detailnya.</p></aside></div></div></section>
+<section><div class="w two"><div><h2>Akses lokasi</h2><ul class="loc">${C.akses.map(a=>`<li>${esc(a)}</li>`).join("")}</ul><p style="color:var(--mut)">${esc(C.addr)}</p><p><a class="btn g" target="_blank" rel="noopener" href="${esc(mp)}">Buka di Google Maps</a></p></div>
+<div><h2>Fasilitas cluster</h2><div class="grid" style="grid-template-columns:1fr 1fr"><div class="card"><h3>Clubhouse</h3><p>Ruang serbaguna warga</p></div><div class="card"><h3>Taman bermain</h3><p>Aman untuk anak</p></div><div class="card"><h3>Jogging track</h3><p>Mengelilingi cluster</p></div><div class="card"><h3>Musala</h3><p>Dekat gerbang utama</p></div></div></div></div></section>
+${C.testi.length?`<section style="background:var(--surf)"><div class="w"><h2>Kata penghuni</h2><div class="grid">${C.testi.map(q=>`<div class="card q"><p>${esc(q.t)}</p><small>${esc(q.by)}</small></div>`).join("")}</div></div></section>`:""}
+<section id="kpr"><div class="w two"><div class="calc"><h2>Simulasi KPR</h2>
+<label for="h">Harga rumah <output id="oh"></output></label><input type="range" id="h" min="${pmin}" max="${pmax}" step="5" value="${ps[0]}">
+<label for="d">Uang muka <output id="od"></output></label><input type="range" id="d" min="5" max="50" step="1" value="10">
+<label for="t">Tenor <output id="ot"></output></label><input type="range" id="t" min="5" max="25" step="1" value="20">
+<label for="b">Bunga per tahun <output id="ob"></output></label><input type="range" id="b" min="5" max="12" step="0.25" value="8"></div>
+<div class="res"><p style="margin:0">Estimasi cicilan per bulan</p><b id="cic"></b><p id="det" style="font-size:.9rem;opacity:.85"></p><p style="font-size:.85rem;opacity:.8">Perkiraan dengan bunga tetap. Angka resmi mengikuti bank pemberi KPR.</p></div></div></section>
+<section style="background:var(--surf)"><div class="w two"><div><h2>Pertanyaan umum</h2>
+<details><summary>Apakah sertifikatnya SHM?</summary><p>Ya, setiap unit berstatus SHM atas nama pembeli setelah proses balik nama.</p></details>
+<details><summary>Bank apa saja yang tersedia?</summary><p>Kami bekerja sama dengan beberapa bank. Tim kami membantu pengajuan.</p></details>
+<details><summary>Kapan serah terima?</summary><p>Unit ready stock dapat ditempati 1 bulan setelah akad.</p></details>
+<details><summary>Bisa survei lokasi?</summary><p>Bisa setiap hari pukul 09.00 sampai 17.00. Hubungi kami untuk jadwal.</p></details></div>
+<div id="kontak"><h2>Jadwalkan survei</h2><form id="f"><label for="n">Nama</label><input type="text" id="n" required autocomplete="name"><label for="w">Nomor WhatsApp</label><input type="tel" id="w" required autocomplete="tel"><label for="s">Tipe diminati</label><select id="s">${T.map((t,i)=>`<option value="${i}">${esc(t.n)} (${rp(t.p*1e6)})</option>`).join("")}</select><p><button class="btn" type="submit">Kirim lewat WhatsApp</button></p></form></div></div></section>
+<footer><div class="w"><b>${esc(C.name)}</b><br>${esc(C.addr)}. Gambar dan harga bersifat ilustrasi dan dapat berubah tanpa pemberitahuan.</div></footer>`;
+const wa=C.wa.replace(/\D/g,"");
+$("tabs").innerHTML="";T.forEach((t,i)=>{const b=document.createElement("button");b.textContent=t.n;b.role="tab";b.onclick=()=>showT(i);$("tabs").appendChild(b)});
+if(ti>=T.length)ti=0;showT(ti);
+siteTabs();drawMap();wireMap();
+["h","d","t","b"].forEach(i=>$(i).addEventListener("input",kpr));kpr();
+$("f").addEventListener("submit",e=>{e.preventDefault();const t=T[$("s").value];window.open("https://wa.me/"+wa+"?text="+encodeURIComponent(`Halo, saya ${$("n").value} (${$("w").value}). Saya ingin survei ${C.name}, ${t.n}.`),"_blank","noopener")})}
+
+function showT(i){ti=i;const T=CFG.tipe,t=T[i];[...$("tabs").children].forEach((b,j)=>b.setAttribute("aria-selected",i==j));
+let fig;if(t.img)fig=`<img src="${esc(t.img)}" alt="Denah ${esc(t.n)}" style="width:100%;border-radius:14px">`;else{
+const pl=PL[t.lb<=40?0:t.lb<=52?1:2],s=300/pl.w,o=20,H=pl.h*s+o*2+2.2*s;
+let g=pl.r.map(([x,y,w,h,l])=>`<rect x="${o+x*s}" y="${o+y*s}" width="${w*s}" height="${h*s}" fill="var(--surf)" stroke="var(--ink)" stroke-width="2"/><text x="${o+(x+w/2)*s}" y="${o+(y+h/2)*s}" text-anchor="middle" font-size="10" fill="var(--ink)" font-weight="600">${l}</text>${w*s>45?`<text x="${o+(x+w/2)*s}" y="${o+(y+h/2)*s+12}" text-anchor="middle" font-size="9" fill="var(--mut)">${fm(w)}\u00d7${fm(h)} m</text>`:""}`).join("");
+g+=`<rect x="${o}" y="${o+pl.h*s+6}" width="${pl.w*s*.55}" height="${2.2*s}" fill="none" stroke="var(--mut)" stroke-dasharray="5 4"/><text x="${o+pl.w*s*.275}" y="${o+pl.h*s+6+1.2*s}" text-anchor="middle" font-size="10" fill="var(--mut)">Carport</text>`;
+fig=`<svg viewBox="0 0 340 ${H}" role="img" aria-label="Denah ${esc(t.n)}" style="width:100%;background:var(--bg);border-radius:14px">${g}</svg>`}
+$("unit").innerHTML=`${fig}<div><h3>${esc(t.n)}</h3><div class="price">${rp(t.p*1e6)}</div><ul><li>Luas tanah ${t.lt} m\u00b2</li><li>Luas bangunan ${t.lb} m\u00b2</li><li>${esc(t.sp)}</li></ul><a class="btn" href="#kontak" id="ti">Saya tertarik</a></div>`;
+$("ti").onclick=()=>{$("s").value=i}}
+
+function drawMap(){const s=CFG.sp,sc=s.sc||1;let h="";const sv=$("svg");sv.classList.toggle("ov",!!s.img);
+if(s.img)h+=`<image href="${esc(s.img)}" x="0" y="0" width="800" height="440" preserveAspectRatio="xMidYMid meet"/>`;else{
+h+=`<rect x="0" y="108" width="800" height="44" fill="var(--line)"/><rect x="0" y="228" width="800" height="44" fill="var(--line)"/><rect x="0" y="348" width="800" height="44" fill="var(--line)"/><text class="lb" x="400" y="134">Jalan Utama 8 m</text><text class="lb" x="400" y="254">Jalan Lingkungan 6 m</text><text class="lb" x="400" y="374">Jalan Lingkungan 6 m</text><rect x="16" y="396" width="150" height="34" rx="6" fill="var(--brand)"/><text x="91" y="418">Gerbang utama</text><rect x="186" y="396" width="190" height="34" rx="6" fill="#3f9b6f"/><text x="281" y="418">Taman &amp; jogging track</text><rect x="396" y="396" width="150" height="34" rx="6" fill="#b88a1f"/><text x="471" y="418">Clubhouse</text><rect x="566" y="396" width="110" height="34" rx="6" fill="#5b7a73"/><text x="621" y="418">Musala</text>`}
+s.kav.forEach((k,i)=>{const w=k.w*sc,hh=k.h*sc;h+=`<rect class="k ${k.st}${SEL===i?" on":""}" data-i="${i}" x="${k.x-w/2}" y="${k.y-hh/2}" width="${w}" height="${hh}" rx="4" tabindex="${k.st=="sd"&&!ADM?-1:0}" role="button" aria-label="Kavling ${esc(k.id)}"/><text x="${k.x}" y="${k.y+4}">${esc(k.id)}</text>`});
+sv.innerHTML=h}
+
+function pick(i){const C=CFG,k=C.sp.kav[i];if(!k)return;if(k.st=="sd"&&!ADM)return;SEL=i;drawMap();const t=C.tipe[k.tipe]||C.tipe[0];
+$("panel").innerHTML=`<h3>Kavling ${esc(k.id)}</h3><dl><dt>Tipe</dt><dd>${esc(t.n)}</dd><dt>Luas tanah</dt><dd>${t.lt} m\u00b2</dd><dt>Status</dt><dd>${NM[k.st]}</dd><dt>Harga</dt><dd>${rp(t.p*1e6)}</dd></dl><a class="btn" style="width:100%;text-align:center" target="_blank" rel="noopener" href="https://wa.me/${C.wa.replace(/\D/g,"")}?text=${encodeURIComponent("Halo, saya tertarik dengan kavling "+k.id+" ("+t.n+") di "+C.name+".")}">Tanya kavling ini</a>`}
+
+function wireMap(){const sv=$("svg");let dg=null;
+const pt=e=>{const p=sv.createSVGPoint();p.x=e.clientX;p.y=e.clientY;const q=p.matrixTransform(sv.getScreenCTM().inverse());return[Math.round(q.x),Math.round(q.y)]};
+sv.onclick=e=>{if(moved){moved=false;return}const el=e.target;
+if(el.classList.contains("k"))return pick(+el.dataset.i);
+if(ADM&&PLACE){const[x,y]=pt(e),K=CFG.sp.kav,n=K.filter(k=>k.id.indexOf(PLACE)==0).length+1;K.push({id:PLACE+n,tipe:0,st:"ok",x,y,w:40,h:28});drawMap();admView()}};
+sv.onkeydown=e=>{if((e.key=="Enter"||e.key==" ")&&e.target.classList.contains("k")){e.preventDefault();pick(+e.target.dataset.i)}};
+sv.onpointerdown=e=>{if(!ADM||!e.target.classList.contains("k"))return;dg=+e.target.dataset.i;moved=false;sv.setPointerCapture(e.pointerId)};
+sv.onpointermove=e=>{if(dg===null)return;const[x,y]=pt(e),k=CFG.sp.kav[dg];if(Math.abs(x-k.x)+Math.abs(y-k.y)>3)moved=true;if(moved){k.x=x;k.y=y;drawMap()}};
+sv.onpointerup=()=>{dg=null};
+if(SEL!==null)pick(SEL)}
+
+function kpr(){const hg=+$("h").value*1e6,dp=+$("d").value,ty=+$("t").value,by=+$("b").value,pok=hg*(1-dp/100),r=by/1200,n=ty*12,c=pok*r/(1-Math.pow(1+r,-n));
+$("oh").textContent=rp(hg);$("od").textContent=dp+"% ("+rp(hg*dp/100)+")";$("ot").textContent=ty+" tahun";$("ob").textContent=by+"%";$("cic").textContent=rp(c);$("det").textContent="Pokok pinjaman "+rp(pok)+" selama "+n+" bulan."}
+
+/* ===== SITE PLAN (poligon manual, per lokasi) ===== */
+const S=()=>CFG.sites[Math.min(SI,CFG.sites.length-1)];
+const cen=p=>[p.reduce((a,q)=>a+q[0],0)/p.length,p.reduce((a,q)=>a+q[1],0)/p.length];
+const BG='<rect y="108" width="800" height="44" fill="var(--line)"/><rect y="228" width="800" height="44" fill="var(--line)"/><rect y="348" width="800" height="44" fill="var(--line)"/><text class="lb" x="400" y="134">Jalan Utama 8 m</text><text class="lb" x="400" y="254">Jalan Lingkungan 6 m</text><text class="lb" x="400" y="374">Jalan Lingkungan 6 m</text><rect x="16" y="396" width="150" height="34" rx="6" fill="var(--brand)"/><text x="91" y="418">Gerbang utama</text><rect x="186" y="396" width="190" height="34" rx="6" fill="#3f9b6f"/><text x="281" y="418">Taman &amp; jogging track</text><rect x="396" y="396" width="150" height="34" rx="6" fill="#b88a1f"/><text x="471" y="418">Clubhouse</text>';
+const dim=u=>new Promise(r=>{const m=new Image();m.onload=()=>r([m.naturalWidth,m.naturalHeight]);m.onerror=()=>r([800,440]);m.src=u});
+function siteTabs(){const e=$("stabs");if(!e)return;e.innerHTML="";if(CFG.sites.length<2)return;CFG.sites.forEach((s,i)=>{const b=document.createElement("button");b.textContent=s.name;b.setAttribute("aria-selected",i==SI);b.onclick=()=>{SI=i;SEL=null;siteTabs();drawMap();$("panel").innerHTML="<h3>Pilih kavling</h3><p>Klik salah satu kavling di denah untuk melihat detailnya.</p>"};e.appendChild(b)})}
+function drawMap(){const s=S(),sv=$("svg"),iw=s.iw||800,ih=s.ih||440,fs=Math.max(9,Math.round(iw/70));sv.setAttribute("viewBox",`0 0 ${iw} ${ih}`);sv.classList.toggle("ov",!!s.img);
+let h=s.img?`<image href="${esc(s.img)}" x="0" y="0" width="${iw}" height="${ih}"/>`:BG;
+s.kav.forEach((k,i)=>{const c=cen(k.pts);h+=`<polygon class="k ${k.st}${SEL===i?" on":""}" data-i="${i}" points="${k.pts.map(p=>p.join(",")).join(" ")}" tabindex="${k.st=="sd"&&!ADM?-1:0}" role="button" aria-label="Kavling ${esc(k.id)}"/><text class="id" x="${c[0]}" y="${c[1]+fs/3}" style="font-size:${fs}px">${esc(k.id)}</text>`});
+if(ADM&&!TOOL&&SEL!==null&&s.kav[SEL])s.kav[SEL].pts.forEach((p,j)=>{h+=`<circle class="hd" data-v="${j}" cx="${p[0]}" cy="${p[1]}" r="${fs*.5}"/>`});
+if(DRW.length)h+=`<polyline points="${DRW.map(p=>p.join(",")).join(" ")}" fill="rgba(224,165,38,.3)" stroke="#e0a526" stroke-width="${fs/5}"/>`+DRW.map(p=>`<circle cx="${p[0]}" cy="${p[1]}" r="${fs*.4}" fill="#e0a526"/>`).join("");
+sv.innerHTML=h}
+function pick(i){const C=CFG,k=S().kav[i];if(!k||(k.st=="sd"&&!ADM))return;SEL=i;drawMap();const t=C.tipe[k.tipe]||C.tipe[0];
+$("panel").innerHTML=`<h3>Kavling ${esc(k.id)}</h3><dl><dt>Lokasi</dt><dd>${esc(S().name)}</dd><dt>Tipe</dt><dd>${esc(t.n)}</dd><dt>Luas tanah</dt><dd>${t.lt} m\u00b2</dd><dt>Status</dt><dd>${NM[k.st]}</dd><dt>Harga</dt><dd>${rp(t.p*1e6)}</dd></dl><a class="btn" style="width:100%;text-align:center" target="_blank" rel="noopener" href="https://wa.me/${C.wa.replace(/\D/g,"")}?text=${encodeURIComponent("Halo, saya tertarik dengan kavling "+k.id+" ("+t.n+", "+S().name+") di "+C.name+".")}">Tanya kavling ini</a>`}
+function newK(pts){const s=S(),pre=PRE||"A",n=s.kav.filter(k=>k.id.indexOf(pre)==0).length+1;s.kav.push({id:pre+n,tipe:0,st:"ok",pts:pts.map(p=>[Math.round(p[0]),Math.round(p[1])])});SEL=s.kav.length-1;DRW=[];drawMap();admView()}
+function finishPoly(){const d=DRW.filter((p,i)=>i==0||p[0]!=DRW[i-1][0]||p[1]!=DRW[i-1][1]);if(d.length>=3)newK(d);else{DRW=[];drawMap()}}
+function wireMap(){const sv=$("svg");let dg=null,vd=null,rs=null;
+const pt=e=>{const p=sv.createSVGPoint();p.x=e.clientX;p.y=e.clientY;const q=p.matrixTransform(sv.getScreenCTM().inverse());return[Math.round(q.x),Math.round(q.y)]};
+sv.onpointerdown=e=>{if(!ADM)return;const t=e.target,[x,y]=pt(e);moved=false;
+if(TOOL=="rect"){rs=[x,y];DRW=[[x,y],[x,y],[x,y],[x,y]];sv.setPointerCapture(e.pointerId);return}
+if(TOOL)return;
+if(t.classList.contains("hd")){vd=+t.dataset.v;sv.setPointerCapture(e.pointerId);return}
+if(t.classList.contains("k")){dg=[+t.dataset.i,x,y];SEL=+t.dataset.i;sv.setPointerCapture(e.pointerId)}};
+sv.onpointermove=e=>{if(!ADM)return;const[x,y]=pt(e),s=S();
+if(rs){DRW=[rs,[x,rs[1]],[x,y],[rs[0],y]];drawMap();return}
+if(vd!==null){s.kav[SEL].pts[vd]=[x,y];moved=true;drawMap();return}
+if(dg){const dx=x-dg[1],dy=y-dg[2];if(moved||Math.abs(dx)+Math.abs(dy)>3){moved=true;const k=s.kav[dg[0]];k.pts=k.pts.map(p=>[p[0]+dx,p[1]+dy]);dg[1]=x;dg[2]=y;drawMap()}}};
+sv.onpointerup=e=>{if(rs){const[x,y]=pt(e);const ok=Math.abs(x-rs[0])>6&&Math.abs(y-rs[1])>6,d=DRW;rs=null;if(ok)newK(d);else{DRW=[];drawMap()}moved=true;return}
+if(moved&&(dg||vd!==null))admView();dg=null;vd=null};
+sv.onclick=e=>{if(moved){moved=false;return}const t=e.target,[x,y]=pt(e);
+if(ADM&&TOOL=="poly"){DRW.push([x,y]);drawMap();return}
+if(t.classList.contains("k"))return pick(+t.dataset.i);
+if(ADM&&SEL!==null){SEL=null;drawMap();admView()}};
+sv.ondblclick=()=>{if(ADM&&TOOL=="poly")finishPoly()};
+sv.onkeydown=e=>{if((e.key=="Enter"||e.key==" ")&&e.target.classList.contains("k")){e.preventDefault();pick(+e.target.dataset.i)}};
+if(SEL!==null)pick(SEL)}
+document.addEventListener("keydown",e=>{if(!ADM||!TOOL)return;if(e.key=="Escape"){DRW=[];drawMap()}if(e.key=="Enter"&&TOOL=="poly")finishPoly()});
+function spTab(){const C=CFG,s=S(),on=t=>TOOL==t?' style="background:var(--gold);color:#1b1500"':"";
+return`<label>Lokasi / cluster</label><div style="display:flex;gap:6px"><select data-sw="1">${C.sites.map((x,i)=>`<option value="${i}"${i==SI?" selected":""}>${esc(x.name)}</option>`).join("")}</select><button class="mini" data-a="addS">+ Lokasi</button><button class="mini" data-a="delS">Hapus</button></div>`+IN("Nama lokasi",`sites.${SI}.name`,s.name)
++`<p style="color:var(--mut)">Satu lokasi punya satu gambar site plan dan kavlingnya sendiri. Gambar kavling tepat di atas gambar supaya sinkron.</p>${s.img?`<img class="th" src="${esc(s.img)}" alt="">`:""}<p><button class="btn" data-a="imgSP">${s.img?"Ganti":"Unggah"} gambar site plan</button> ${s.img?`<button class="mini" data-a="rmSP">Hapus gambar</button>`:""}</p>`
++`<label>Awalan ID kavling baru (contoh A, B, C)</label><input type="text" id="pre" value="${esc(PRE)}">`
++`<p>Alat: <button class="mini" data-a="tool:rect"${on("rect")}>Kotak (tarik)</button> <button class="mini" data-a="tool:poly"${on("poly")}>Poligon (klik sudut)</button>${TOOL?` <button class="mini" data-a="tool:">Berhenti</button>`:""}${TOOL=="poly"?` <button class="mini" data-a="fin">Selesai</button>`:""}</p>`
++`<p style="color:var(--mut)">${TOOL=="rect"?"Tarik di atas gambar untuk membuat satu kavling.":TOOL=="poly"?"Klik tiap sudut kavling, lalu klik dua kali atau tekan Selesai.":"Tanpa alat: tarik kavling untuk memindah. Klik kavling, lalu tarik titik bulat untuk mengubah sudutnya."}</p>`
++`<p><button class="mini" data-a="gen">Isi 30 kavling contoh</button> <button class="mini" data-a="clr">Hapus semua kavling</button></p><b>${s.kav.length} kavling</b>`
++s.kav.map((k,i)=>`<div class="kr"><input type="text" data-p="sites.${SI}.kav.${i}.id" value="${esc(k.id)}" aria-label="ID kavling"><select data-n="1" data-p="sites.${SI}.kav.${i}.tipe" aria-label="Tipe">${C.tipe.map((t,j)=>`<option value="${j}"${j==k.tipe?" selected":""}>${esc(t.n)}</option>`).join("")}</select><select data-p="sites.${SI}.kav.${i}.st" aria-label="Status">${Object.keys(NM).map(v=>`<option value="${v}"${v==k.st?" selected":""}>${NM[v]}</option>`).join("")}</select><button class="mini" data-a="selK:${i}" aria-label="Pilih">\u25ce</button><button class="mini" data-a="delK:${i}" aria-label="Hapus">\u2715</button></div>`).join("")}
+/* ===== ADMIN ===== */
+const setP=(p,v)=>{const a=p.split(".");let o=CFG;for(let i=0;i<a.length-1;i++)o=o[a[i]];o[a[a.length-1]]=v};
+let tm;const sch=()=>{clearTimeout(tm);tm=setTimeout(()=>{render()},300)};
+const stm=(t,bad)=>{const e=$("stm");if(e){e.textContent=t;e.style.color=bad?"#c0392b":"var(--mut)"}};
+const IN=(l,p,v,n)=>`<label>${l}<input ${n?'type="number" step="any" data-n="1"':'type="text"'} data-p="${p}" value="${esc(v)}"></label>`;
+const pickF=m=>new Promise(r=>{const i=document.createElement("input");i.type="file";i.accept="image/*";i.multiple=!!m;i.onchange=()=>r([...i.files]);i.click()});
+async function up(f,max){let b=f;if(f.type!="image/svg+xml"){const bm=await createImageBitmap(f),s=Math.min(1,max/Math.max(bm.width,bm.height)),c=document.createElement("canvas");c.width=Math.round(bm.width*s);c.height=Math.round(bm.height*s);c.getContext("2d").drawImage(bm,0,0,c.width,c.height);b=await new Promise(r=>c.toBlob(r,"image/jpeg",.85))}
+const A=await window.claude.use("assets");if(!A)throw new Error("fitur unggah tidak tersedia");return(await A.upload(b)).url}
+function compose(){const cfg=JSON.stringify(CFG).replace(/</g,"\\u003c"),E="</"+"script>";
+return'<!DOCTYPE html>\n<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>'+esc(CFG.name)+'</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Figtree:wght@400;500;600&display=swap"><style id="css">'+$("css").textContent+'</style></head><body><div id="app"></div><div id="adm"></div><script id="cfg" type="application/json">'+cfg+E+'<script id="main">'+$("main").textContent+E+'</body></html>'}
+async function save(){stm("Menyimpan...");try{const a=await window.claude.use("artifact");if(!a)throw new Error("tidak punya izin simpan");await a.publish(compose())}catch(e){stm("Gagal menyimpan: "+(e&&e.message||e),1)}}
+
+function admView(){const C=CFG;let b="";
+if(AT=="umum")b=IN("Nama proyek","name",C.name)+IN("Judul utama","tag",C.tag)+`<label>Deskripsi singkat<textarea rows="3" data-p="sub">${esc(C.sub)}</textarea></label>`+IN("Alamat proyek","addr",C.addr)+IN("Link Google Maps (opsional, tempel link dari Maps)","maps",C.maps)+IN("Nomor WhatsApp (format 62812...)","wa",C.wa)+`<label>Akses lokasi (satu baris satu poin)<textarea rows="5" data-l="1" data-p="akses">${esc(C.akses.join("\n"))}</textarea></label>`;
+if(AT=="tipe")b=C.tipe.map((t,i)=>`<div class="row">${IN("Nama tipe",`tipe.${i}.n`,t.n)}${IN("Luas tanah (m²)",`tipe.${i}.lt`,t.lt,1)}${IN("Luas bangunan (m²)",`tipe.${i}.lb`,t.lb,1)}${IN("Harga (juta rupiah)",`tipe.${i}.p`,t.p,1)}${IN("Spesifikasi",`tipe.${i}.sp`,t.sp)}${t.img?`<img class="th" src="${esc(t.img)}" alt="">`:""}<p><button class="mini" data-a="imgT:${i}">${t.img?"Ganti":"Unggah"} gambar denah</button> ${t.img?`<button class="mini" data-a="rmT:${i}">Pakai denah otomatis</button> `:""}<button class="mini" data-a="delT:${i}">Hapus tipe</button></p></div>`).join("")+`<button class="btn" data-a="addT">+ Tambah tipe</button>`;
+if(AT=="sp")b=spTab();if(AT=="spX")b=`<p>1. Unggah gambar site plan. 2. Tambah kavling lalu klik di atas gambar. 3. Geser kotak kavling agar pas.</p>${C.sp.img?`<img class="th" src="${esc(C.sp.img)}" alt="">`:""}<p><button class="btn" data-a="imgSP">${C.sp.img?"Ganti":"Unggah"} gambar site plan</button> ${C.sp.img?`<button class="mini" data-a="rmSP">Pakai denah contoh</button>`:""}</p>${IN("Ukuran kotak kavling (1 = normal)","sp.sc",C.sp.sc||1,1)}<label>Awalan ID kavling baru</label><input type="text" id="pre" value="${esc(PLACE||"A")}"><p><button class="btn" data-a="place">${PLACE?"Selesai menambah":"Tambah kavling lewat klik di denah"}</button></p><p><button class="mini" data-a="gen">Isi 30 kavling contoh</button> <button class="mini" data-a="clr">Hapus semua kavling</button></p><b>${K.length} kavling</b>`+K.map((k,i)=>`<div class="kr"><input type="text" data-p="sp.kav.${i}.id" value="${esc(k.id)}" aria-label="ID kavling"><select data-n="1" data-p="sp.kav.${i}.tipe" aria-label="Tipe">${C.tipe.map((t,j)=>`<option value="${j}"${j==k.tipe?" selected":""}>${esc(t.n)}</option>`).join("")}</select><select data-p="sp.kav.${i}.st" aria-label="Status">${Object.keys(NM).map(v=>`<option value="${v}"${v==k.st?" selected":""}>${NM[v]}</option>`).join("")}</select><button class="mini" data-a="delK:${i}" aria-label="Hapus kavling">✕</button></div>`).join("");
+if(AT=="gal")b=`<p><button class="btn" data-a="addG">+ Unggah foto (bisa banyak)</button></p>`+C.gal.map((g,i)=>`<div class="row"><img class="th" src="${esc(g.url)}" alt="">${IN("Keterangan",`gal.${i}.cap`,g.cap)}<button class="mini" data-a="delG:${i}">Hapus foto</button></div>`).join("");
+if(AT=="q")b=C.testi.map((q,i)=>`<div class="row"><label>Testimoni<textarea rows="3" data-p="testi.${i}.t">${esc(q.t)}</textarea></label>${IN("Nama dan tipe",`testi.${i}.by`,q.by)}<button class="mini" data-a="delQ:${i}">Hapus</button></div>`).join("")+`<button class="btn" data-a="addQ">+ Tambah testimoni</button>`;
+const tabs=[["umum","Umum"],["tipe","Tipe & harga"],["sp","Site plan"],["gal","Galeri"],["q","Testimoni"]];
+$("adm").innerHTML=`<button class="btn" id="ab" data-a="open">Admin</button>`+(ADM?`<div class="dr${MIN?" min":""}" id="dr"><header><b>Admin</b><span id="stm" style="font-size:.8rem;color:var(--mut)"></span>${TOOL=="poly"?'<button class="mini" data-a="fin">Selesai</button>':""}<button class="mini" data-a="mn">${MIN?"Buka":"Kecilkan"}</button><button class="btn" data-a="save">Simpan</button><button class="mini" data-a="x" aria-label="Tutup">✕</button></header><div class="tabs">${tabs.map(([k,l])=>`<button aria-selected="${AT==k}" data-a="tab:${k}">${l}</button>`).join("")}</div>${b}</div>`:"")}
+
+$("adm").addEventListener("input",e=>{const el=e.target;if(el.id=="pre"){PRE=el.value;return}if(el.dataset.sw){SI=+el.value;SEL=null;DRW=[];siteTabs();drawMap();admView();return}const p=el.dataset.p;if(!p)return;let v=el.value;if(el.dataset.n)v=+v||0;if(el.dataset.l)v=v.split("\n").map(s=>s.trim()).filter(Boolean);setP(p,v);sch()});
+$("adm").addEventListener("click",async e=>{const bt=e.target.closest("[data-a]");if(!bt)return;const[a,i]=bt.dataset.a.split(":"),C=CFG;
+try{
+if(a=="open"){ADM=true;MIN=false}
+else if(a=="x"){ADM=false;TOOL="";DRW=[];SEL=null}
+else if(a=="mn")MIN=!MIN;
+else if(a=="tab")AT=i;
+else if(a=="save")return save();
+else if(a=="addT")C.tipe.push({n:"Tipe Baru",lt:90,lb:45,p:500,sp:"2 kamar tidur, 1 kamar mandi",img:""});
+else if(a=="delT"){if(C.tipe.length>1){C.tipe.splice(+i,1);C.sites.forEach(s=>s.kav.forEach(k=>{if(k.tipe>=C.tipe.length)k.tipe=0}))}}
+else if(a=="imgT"){const[f]=await pickF();if(f){stm("Mengunggah...");C.tipe[+i].img=await up(f,1600)}}
+else if(a=="rmT")C.tipe[+i].img="";
+else if(a=="imgSP"){const[f]=await pickF();if(f){stm("Mengunggah...");const s=S(),u=await up(f,2400),d=await dim(u);if(!s.img)s.kav=[];s.img=u;s.iw=d[0];s.ih=d[1];SEL=null}}
+else if(a=="rmSP"){const s=S();s.img="";s.iw=800;s.ih=440}
+else if(a=="gen"){const s=S();s.img="";s.iw=800;s.ih=440;s.kav=genKav();SEL=null}
+else if(a=="clr"){S().kav=[];SEL=null}
+else if(a=="delK"){S().kav.splice(+i,1);SEL=null}
+else if(a=="selK")SEL=+i;
+else if(a=="tool"){TOOL=i||"";DRW=[];if(TOOL)$("siteplan").scrollIntoView()}
+else if(a=="fin"){finishPoly();return}
+else if(a=="addS"){C.sites.push({name:"Lokasi "+(C.sites.length+1),img:"",iw:800,ih:440,kav:[]});SI=C.sites.length-1;SEL=null}
+else if(a=="delS"){if(C.sites.length>1){C.sites.splice(SI,1);SI=0;SEL=null}}
+else if(a=="addG"){const fs=await pickF(1);stm("Mengunggah...");for(const f of fs)C.gal.push({url:await up(f,1600),cap:""})}
+else if(a=="delG")C.gal.splice(+i,1);
+else if(a=="addQ")C.testi.push({t:"",by:""});
+else if(a=="delQ")C.testi.splice(+i,1);
+}catch(err){stm("Gagal: "+(err&&err.message||err),1);return}
+render();admView()});
+
+render();
+(async()=>{try{const u=window.claude&&await window.claude.use("user");if(u&&u.canEdit())admView()}catch(e){}})();
+</script></body></html>
